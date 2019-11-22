@@ -4,12 +4,13 @@ namespace App\Traits;
 
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 trait UploadAble
 {
     public function uploadOne(UploadedFile $file, $folder = null, $disk = 'public', $filename = null)
     {
-        $name = $filename ? $filename : str_random(25);
+        $name = $filename ? $filename : Str::random(25);
         return $file->storeAs(
             $folder,
             $name . '.' . $file->getClientOriginalExtension(),

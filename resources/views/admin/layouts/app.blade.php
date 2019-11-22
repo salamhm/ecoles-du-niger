@@ -28,15 +28,7 @@
 
                 <!-- Main Content -->
                 <div class="main-content">
-                    <section class="section">
-                        <div class="section-header">
-                            <h1>$pageTitle</h1>
-                        </div>
-
-                        <div class="section-body">
-                            @yield('content')
-                        </div>
-                    </section>
+                    @yield('content')
                 </div>
                 <!-- Footer -->
                 @include('admin.partials.footer')
