@@ -18,7 +18,7 @@
                     <div class="card-header">
                         <h4>{{$subTitle}}</h4>
                         <div class="card-header-action">
-                            <a href="{{ route('admin.cities.create') }}" class="btn btn-primary pull-right">Ajouter une ville</a>
+                            <a href="{{ route('admin.levels.create') }}" class="btn btn-primary pull-right">Ajouter un cycle</a>
                         </div>
                     </div>
                     <div class="card-body">
@@ -33,16 +33,16 @@
                                     </tr>
                                 </thead>
                                 <tbody>                                 
-                                    @foreach ($cities as $city)
+                                    @foreach ($levels as $level)
                                         <tr>
-                                            <td>{{ $city->id }}</td>
-                                            <td>{{ $city->name }}</td>
-                                            <td>{{ $city->slug }}</td>
+                                            <td>{{ $level->id }}</td>
+                                            <td>{{ $level->name }}</td>
+                                            <td>{{ $level->slug }}</td>
                                             <td>
-                                                <a href="{{ route('admin.cities.edit', $city->id) }}" class="btn btn-icon btn-primary">
+                                                <a href="{{ route('admin.levels.edit', $level->id) }}" class="btn btn-icon btn-primary">
                                                     <i class="far fa-edit fa-fw"></i>
                                                 </a>
-                                                <a href="{{ route('admin.cities.delete', $city->id) }}" class="btn btn-icon btn-danger">
+                                                <a href="{{ route('admin.levels.delete', $level->id) }}" class="btn btn-icon btn-danger">
                                                     <i class="fas fa-trash fa-fw"></i>
                                                 </a>
                                             </td>

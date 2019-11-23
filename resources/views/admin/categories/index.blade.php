@@ -76,28 +76,5 @@
     <script src="{{ asset('/backend/modules/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js') }}"></script>
     <script src="{{ asset('/backend/modules/datatables/Select-1.2.4/js/dataTables.select.min.js') }}"></script>
     <script src="{{ asset('/backend/modules/jquery-ui/jquery-ui.min.js') }}"></script>
-    <script type="text/javascript">
-        $('#myDataTable').DataTable({
-            "language": {
-                "sProcessing": "Traitement en cours ...",
-                "sLengthMenu": "Afficher _MENU_ entrées",
-                "sZeroRecords": "Aucun résultat trouvé",
-                "sEmptyTable": "Aucune donnée disponible",
-                "sInfo": "Entrée _START_ à _END_ sur _TOTAL_",
-                "sInfoEmpty": "Aucune entrée affichée",
-                "sInfoFiltered": "(Filtrer un maximum de_MAX_)",
-                "sInfoPostFix": "",
-                "sSearch": "Rechercher:",
-                "sUrl": "",
-                "sInfoThousands": ",",
-                "sLoadingRecords": "Chargement...",
-                "oPaginate": {
-                "sFirst": "Premier", "sLast": "Dernier", "sNext": "Suivant", "sPrevious": "Précédent"
-                },
-                "oAria": {
-                "sSortAscending": ": Trier par ordre croissant", "sSortDescending": ": Trier par ordre décroissant"
-                }
-            }
-        });
-    </script>
+    <script src="{{ asset('/backend/js/custom-table.js') }}"></script>
 @endpush

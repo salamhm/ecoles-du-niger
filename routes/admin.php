@@ -33,6 +33,17 @@ Route::group([ 'prefix' => 'admin'], function () {
             Route::get('/{id}/delete', 'Admin\CityController@delete')->name('admin.cities.delete');
         
         });
+
+        Route::group(['prefix'  =>   'levels'], function() {
+
+            Route::get('/', 'Admin\LevelController@index')->name('admin.levels.index');
+            Route::get('/create', 'Admin\LevelController@create')->name('admin.levels.create');
+            Route::post('/store', 'Admin\LevelController@store')->name('admin.levels.store');
+            Route::get('/{id}/edit', 'Admin\LevelController@edit')->name('admin.levels.edit');
+            Route::post('/update', 'Admin\LevelController@update')->name('admin.levels.update');
+            Route::get('/{id}/delete', 'Admin\LevelController@delete')->name('admin.levels.delete');
+        
+        });
     
     });
 

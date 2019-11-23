@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
-class City extends Model
+class Level extends Model
 {
-    protected $table = 'cities';
+    protected $table = "levels";
 
     protected $fillable = ['name', 'slug'];
 
