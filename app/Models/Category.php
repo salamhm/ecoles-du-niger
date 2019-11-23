@@ -16,7 +16,6 @@ class Category extends Model
     protected $casts = [
         'parent_id' => 'integer',
         'featured' => 'boolean',
-        'menu' => 'boolean'
     ];
 
     public function setNameAttribute($value)

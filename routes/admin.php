@@ -22,6 +22,17 @@ Route::group([ 'prefix' => 'admin'], function () {
             Route::get('/{id}/delete', 'Admin\CategoryController@delete')->name('admin.categories.delete');
         
         });
+
+        Route::group(['prefix'  =>   'cities'], function() {
+
+            Route::get('/', 'Admin\CityController@index')->name('admin.cities.index');
+            Route::get('/create', 'Admin\CityController@create')->name('admin.cities.create');
+            Route::post('/store', 'Admin\CityController@store')->name('admin.cities.store');
+            Route::get('/{id}/edit', 'Admin\CityController@edit')->name('admin.cities.edit');
+            Route::post('/update', 'Admin\CityController@update')->name('admin.cities.update');
+            Route::get('/{id}/delete', 'Admin\CityController@delete')->name('admin.cities.delete');
+        
+        });
     
     });
 

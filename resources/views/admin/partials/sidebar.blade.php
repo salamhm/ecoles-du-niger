@@ -22,6 +22,12 @@
                     <span>Catégories</span>
                 </a>
             </li>
+            <li class="{{ Route::currentRouteName() == 'admin.cities.index' ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('admin.cities.index') }}">
+                    <i class="fa fa-tags"></i> 
+                    <span>Villes</span>
+                </a>
+            </li>
             <li class="dropdown">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-th"></i> <span>Bootstrap</span></a>
                 <ul class="dropdown-menu">
