@@ -44,6 +44,17 @@ Route::group([ 'prefix' => 'admin'], function () {
             Route::get('/{id}/delete', 'Admin\LevelController@delete')->name('admin.levels.delete');
         
         });
+
+        Route::group(['prefix'  =>   'institution-types'], function() {
+
+            Route::get('/', 'Admin\InstitutionTypeController@index')->name('admin.institution-types.index');
+            Route::get('/create', 'Admin\InstitutionTypeController@create')->name('admin.institution-types.create');
+            Route::post('/store', 'Admin\InstitutionTypeController@store')->name('admin.institution-types.store');
+            Route::get('/{id}/edit', 'Admin\InstitutionTypeController@edit')->name('admin.institution-types.edit');
+            Route::post('/update', 'Admin\InstitutionTypeController@update')->name('admin.institution-types.update');
+            Route::get('/{id}/delete', 'Admin\InstitutionTypeController@delete')->name('admin.institution-types.delete');
+        
+        });
     
     });
 
