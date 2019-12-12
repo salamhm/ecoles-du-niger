@@ -56,11 +56,10 @@ class CityController extends BaseController
             'name' => 'required|max:191|unique:cities',
         ]);
 
-        $targetCity = $this->cityRepository->findCityById($request->id);
         $params = $request->except('_token');
-        $targetCity->update($params);
+        $city = $this->cityRepository->updateCity($params);
 
-        if(!$targetCity)
+        if(!$city)
         {
             return $this->responseRedirectBack('Une erreur s\'est produite lors de la modification de la ville', 'error', true, true);
         }
@@ -69,10 +68,9 @@ class CityController extends BaseController
 
     public function delete($id)
     {
-        $targetCity = $this->cityRepository->findCityById($id);
-        $targetCity->delete();
+        $city = $this->cityRepository->deleteCity($id);
 
-        if(!$targetCity)
+        if(!$city)
         {
             return $this->responseRedirectBack('Une erreur s\'est produite lors de la suppression de la ville', 'error', true, true);
         }

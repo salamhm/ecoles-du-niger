@@ -61,7 +61,7 @@ class CategoryRepository extends BaseRepository implements CategoryContract
     {
         $category = $this->findCategoryById($params['id']);
         $image = $category->image;
-        $collection = collect($params)->except('_token');
+        $collection = collect($params);
         if($collection->has('image') && ($params['image'] instanceof UploadedFile)) {
             if($category->image != null){
                 $this->deleteOne($category->image);

@@ -57,10 +57,9 @@ class InstitutionTypeController extends BaseController
             'name' => 'required|max:191|unique:institution_types',
         ]);
         $params = $request->except('_token');
-        $targetInstitutionType = $this->institutionTypeRepository->findInstitutionTypeById($request->id);
-        $targetInstitutionType = $this->institutionTypeRepository->updateInstitutionType($params);
+        $institutionType = $this->institutionTypeRepository->updateInstitutionType($params);
 
-        if (!$targetInstitutionType) {
+        if (!$institutionType) {
             return $this->responseRedirectBack("Une erreur s'est produite lors de la modification du type", 'error', true, true);
         }
         return $this->responseRedirect('admin.institution-types.index', 'Type modifié avec success', 'success', false, false);
@@ -68,10 +67,9 @@ class InstitutionTypeController extends BaseController
 
     public function delete($id)
     {
-        $targetInstitutionType = $this->institutionTypeRepository->findInstitutionTypeById($id);
-        $targetInstitutionType->delete();
+        $institutionType = $this->institutionTypeRepository->deleteInstitutionType($id);
 
-        if (!$targetInstitutionType) {
+        if (!$institutionType) {
             return $this->responseRedirectBack("Une erreur s'est produite lors de la suppression du type", 'error', true, true);
         }
         return $this->responseRedirect('admin.institution-types.index', 'Type supprimé avec success', 'success', false, false);

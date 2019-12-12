@@ -41,6 +41,13 @@
                     <span>Types d'école</span>
                 </a>
             </li>
+            </li>
+            <li class="{{ Route::currentRouteName() == 'admin.institutions.index' ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('admin.institutions.index') }}">
+                    <i class="fa fa-tags"></i> 
+                    <span>Ecoles</span>
+                </a>
+            </li>
             <li class="dropdown">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-th"></i> <span>Bootstrap</span></a>
                 <ul class="dropdown-menu">

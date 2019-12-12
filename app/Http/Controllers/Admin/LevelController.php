@@ -58,10 +58,9 @@ class LevelController extends BaseController
             'name' => 'required|max:191|unique:levels',
         ]);
         $params = $request->except('_token');
-        $targetLevel = $this->levelRepository->findLevelById($request->id);
-        $targetLevel = $this->levelRepository->updateLevel($params);
+        $level = $this->levelRepository->updateLevel($params);
 
-        if(!$targetLevel){
+        if(!$level){
             return $this->responseRedirectBack("Une erreur s'est produite lors de la modification du cycle", 'error', true, true);
         }
         return $this->responseRedirect('admin.levels.index', 'Cycle modifié avec success', 'success', false, false);  
@@ -69,10 +68,9 @@ class LevelController extends BaseController
 
     public function delete($id)
     {
-        $targetLevel = $this->levelRepository->findLevelById($id);
-        $targetLevel->delete();
+        $level = $this->levelRepository->deleteLevel($id);
 
-        if(!$targetLevel){
+        if(!$level){
             return $this->responseRedirectBack("Une erreur s'est produite lors de la suppression du cycle", 'error', true, true);
         }
         return $this->responseRedirect('admin.levels.index', 'Cycle supprimé avec success', 'success', false, false);

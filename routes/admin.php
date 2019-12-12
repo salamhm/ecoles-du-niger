@@ -55,6 +55,17 @@ Route::group([ 'prefix' => 'admin'], function () {
             Route::get('/{id}/delete', 'Admin\InstitutionTypeController@delete')->name('admin.institution-types.delete');
         
         });
+
+        Route::group(['prefix'  =>   'institutions'], function() {
+
+            Route::get('/', 'Admin\InstitutionController@index')->name('admin.institutions.index');
+            Route::get('/create', 'Admin\InstitutionController@create')->name('admin.institutions.create');
+            Route::post('/store', 'Admin\InstitutionController@store')->name('admin.institutions.store');
+            Route::get('/{id}/edit', 'Admin\InstitutionController@edit')->name('admin.institutions.edit');
+            Route::post('/update', 'Admin\InstitutionController@update')->name('admin.institutions.update');
+            Route::get('/{id}/delete', 'Admin\InstitutionController@delete')->name('admin.institutions.delete');
+        
+        });
     
     });
 

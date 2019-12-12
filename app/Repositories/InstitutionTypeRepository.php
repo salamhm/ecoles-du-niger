@@ -34,9 +34,9 @@ class InstitutionTypeRepository extends BaseRepository implements InstitutionTyp
     public function createInstitutionType(array $params)
     {
         try {
-            $InstitutionType = new InstitutionType($params);
-            $InstitutionType->save();
-            return $InstitutionType;
+            $institutionType = new InstitutionType($params);
+            $institutionType->save();
+            return $institutionType;
         } catch (QueryException $e) {
             throw new InvalidArgumentException($e);
         }
@@ -44,15 +44,15 @@ class InstitutionTypeRepository extends BaseRepository implements InstitutionTyp
 
     public function updateInstitutionType(array $params)
     {
-        $InstitutionType = $this->findInstitutionTypeById($params['id']);
-        $InstitutionType->update($params);
-        return $InstitutionType;
+        $institutionType = $this->findInstitutionTypeById($params['id']);
+        $institutionType->update($params);
+        return $institutionType;
     }
 
     public function deleteInstitutionType($id)
     {
-        $InstitutionType = $this->findInstitutionTypeById($id);
-        $InstitutionType->delete();
-        return $InstitutionType;
+        $institutionType = $this->findInstitutionTypeById($id);
+        $institutionType->delete();
+        return $institutionType;
     }
 }

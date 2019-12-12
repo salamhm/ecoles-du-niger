@@ -4,11 +4,13 @@ namespace App\Providers;
 
 use App\Contracts\CategoryContract;
 use App\Contracts\CityContract;
+use App\Contracts\InstitutionContract;
 use App\Contracts\LevelContract;
 use App\Contracts\InstitutionTypeContract;
 use Illuminate\Support\ServiceProvider;
 use App\Repositories\CategoryRepository;
 use App\Repositories\CityRepository;
+use App\Repositories\InstitutionRepository;
 use App\Repositories\LevelRepository;
 use App\Repositories\InstitutionTypeRepository;
 
@@ -19,6 +21,7 @@ class RepositoryServiceProvider extends ServiceProvider
         CityContract::class             =>          CityRepository::class,
         LevelContract::class             =>          LevelRepository::class,
         InstitutionTypeContract::class             =>          InstitutionTypeRepository::class,
+        InstitutionContract::class             =>          InstitutionRepository::class,
     ];
 
     /**
