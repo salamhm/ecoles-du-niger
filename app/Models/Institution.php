@@ -20,6 +20,16 @@ class Institution extends Model
         return $this->belongsTo(City::class);
     }
 
+    public function type()
+    {
+        return $this->belongsTo(InstitutionType::class);
+    }
+
+    public function contacts()
+    {
+        return $this->hasMany(InstitutionContact::class);
+    }
+
     public function setNameAttribute($value)
     {
         $this->attributes['name'] = $value;

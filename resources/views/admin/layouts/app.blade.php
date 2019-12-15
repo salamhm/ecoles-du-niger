@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{{ asset('backend/css/components.css') }}">
 
     <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ asset('backend/css/custom.css') }}">
     @yield('styles')
 
     <body>

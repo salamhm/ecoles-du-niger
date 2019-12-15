@@ -137,18 +137,17 @@
                                             <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror
                                     </div>
+                                    <div class="form-group">
+                                        <button class="btn btn-primary mr-1" type="submit">Mettre à jour</button>
+                                    </div>
                                 </div>
                                 <div class="tab-pane fade" id="contacts" role="tabpanel" aria-labelledby="profile-tab">
-                                    Sed sed metus vel lacus hendrerit tempus. Sed efficitur velit tortor, ac efficitur est lobortis quis. Nullam lacinia metus erat, sed fermentum justo rutrum ultrices. Proin quis iaculis tellus. Etiam ac vehicula eros, pharetra consectetur dui. Aliquam convallis neque eget tellus efficitur, eget maximus massa imperdiet. Morbi a mattis velit. Donec hendrerit venenatis justo, eget scelerisque tellus pharetra a.
+                                    <institution-contact :institutionid="{{ $targetInstitution->id }}"></institution-contact>
                                 </div>
                                 <div class="tab-pane fade" id="images" role="tabpanel" aria-labelledby="images-tab">
                                     Vestibulum imperdiet odio sed neque ultricies, ut dapibus mi maximus. Proin ligula massa, gravida in lacinia efficitur, hendrerit eget mauris. Pellentesque fermentum, sem interdum molestie finibus, nulla diam varius leo, nec varius lectus elit id dolor. Nam malesuada orci non ornare vulputate. Ut ut sollicitudin magna. Vestibulum eget ligula ut ipsum venenatis ultrices. Proin bibendum bibendum augue ut luctus.
                                 </div>
                             </div>
-                        </div>
-                        <div class="card-footer">
-                            <button class="btn btn-primary mr-1" type="submit">Mettre à jour</button>
-                            <button class="btn btn-secondary" type="reset">Reset</button>
                         </div>
                     </form>
                 </div>
@@ -160,4 +159,5 @@
 @endsection
 @push('scripts')
 <script src="{{ asset('backend/modules/summernote/summernote-bs4.js') }}"></script>
+<script src="{{ asset('js/app.js') }}"></script>
 @endpush

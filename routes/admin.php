@@ -64,6 +64,11 @@ Route::group([ 'prefix' => 'admin'], function () {
             Route::get('/{id}/edit', 'Admin\InstitutionController@edit')->name('admin.institutions.edit');
             Route::post('/update', 'Admin\InstitutionController@update')->name('admin.institutions.update');
             Route::get('/{id}/delete', 'Admin\InstitutionController@delete')->name('admin.institutions.delete');
+
+            Route::post('get-contacts', 'Admin\InstitutionContactController@getContacts');
+            Route::post('add-contact', 'Admin\InstitutionContactController@addContact');
+            Route::post('update-contact', 'Admin\InstitutionContactController@updateContact');
+            Route::post('delete-contact', 'Admin\InstitutionContactController@deleteContact');
         
         });
     
