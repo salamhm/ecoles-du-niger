@@ -35,4 +35,9 @@ class Institution extends Model
         $this->attributes['name'] = $value;
         $this->attributes['slug'] = Str::slug($value);
     }
+
+    public function images()
+    {
+        return $this->hasMany(InstitutionImage::class);
+    }
 }
