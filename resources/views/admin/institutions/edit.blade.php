@@ -167,7 +167,7 @@
                                             <div class="col-md-12">
                                             <div class="gallery gallery-md">
                                             @foreach($targetInstitution->images as $image)
-                                            <div class="gallery-item" data-image="{{ asset('storage/'.$image->full) }}" data-title="{{ 'Image  ' . $loop->iterationgit}}" href="{{ asset('storage/'.$image->full) }}" title="Image 1">
+                                            <div class="gallery-item" data-image="{{ asset('storage/'.$image->full) }}" data-title="{{ 'Image  ' . $loop->iteration}}" href="{{ asset('storage/'.$image->full) }}" title="Image 1">
                                                 <a class="float-right text-danger" href="{{ route('admin.institutions.images.delete', $image->id) }}">
                                                     <i class="fa fa-fw fa-lg fa-trash"></i>
                                                 </a>
