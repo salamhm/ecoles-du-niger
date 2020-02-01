@@ -62,5 +62,23 @@ Route::group(['prefix' => 'admin'], function () {
             Route::post('images/upload', 'Admin\InstitutionImageController@upload')->name('admin.institutions.images.upload');
             Route::get('images/{id}/delete', 'Admin\InstitutionImageController@delete')->name('admin.institutions.images.delete');
         });
+
+        Route::group(['prefix' => 'program-types'], function () {
+            Route::get('/', 'Admin\ProgramTypeController@index')->name('admin.program-types.index');
+            Route::get('/create', 'Admin\ProgramTypeController@create')->name('admin.program-types.create');
+            Route::post('/store', 'Admin\ProgramTypeController@store')->name('admin.program-types.store');
+            Route::get('/{id}/edit', 'Admin\ProgramTypeController@edit')->name('admin.program-types.edit');
+            Route::post('/update', 'Admin\ProgramTypeController@update')->name('admin.program-types.update');
+            Route::get('/{id}/delete', 'Admin\ProgramTypeController@delete')->name('admin.program-types.delete');
+        });
+
+        Route::group(['prefix' => 'programs'], function () {
+            Route::get('/', 'Admin\ProgramController@index')->name('admin.programs.index');
+            Route::get('/create', 'Admin\ProgramController@create')->name('admin.programs.create');
+            Route::post('/store', 'Admin\ProgramController@store')->name('admin.programs.store');
+            Route::get('/{id}/edit', 'Admin\ProgramController@edit')->name('admin.programs.edit');
+            Route::post('/update', 'Admin\ProgramController@update')->name('admin.programs.update');
+            Route::get('/{id}/delete', 'Admin\ProgramController@delete')->name('admin.programs.delete');
+        });
     });
 });

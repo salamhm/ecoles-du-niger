@@ -17,5 +17,6 @@ class DatabaseSeeder extends Seeder
         $this->call(LevelsTableSeeder::class);
         $this->call(InstitutionTypesTableSeeder::class);
         $this->call(InstitutionsTableSeeder::class);
+        $this->call(ProgramTypesTableSeeder::class);
     }
 }

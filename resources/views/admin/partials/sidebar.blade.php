@@ -48,10 +48,22 @@
                     <span>Ecoles</span>
                 </a>
             </li>
+            <li class="{{ Route::currentRouteName() == 'admin.program-types.index' ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('admin.program-types.index') }}">
+                    <i class="fa fa-tags"></i> 
+                    <span>Type de formation</span>
+                </a>
+            </li>
+            <li class="{{ Route::currentRouteName() == 'admin.programs.index' ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('admin.programs.index') }}">
+                    <i class="fa fa-tags"></i> 
+                    <span>Formations</span>
+                </a>
+            </li>
             <li class="dropdown">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-th"></i> <span>Bootstrap</span></a>
                 <ul class="dropdown-menu">
-                    <li><a class="nav-link" href="bootstrap-alert.html">Alert</a></li>
+                        <li><a class="nav-link" href="bootstrap-alert.html">Alert</a></li>
                     <li><a class="nav-link" href="bootstrap-badge.html">Badge</a></li>
                     <li><a class="nav-link" href="bootstrap-breadcrumb.html">Breadcrumb</a></li>
                     <li><a class="nav-link" href="bootstrap-buttons.html">Buttons</a></li>

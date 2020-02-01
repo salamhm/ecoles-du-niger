@@ -47,7 +47,7 @@ class InstitutionTypeController extends BaseController
     {
         $targetInstitutionType = $this->institutionTypeRepository->findInstitutionTypeById($id);
 
-        $this->setPageTitle('Cycles', 'Modifier un type');
+        $this->setPageTitle('Types d\'école', 'Modifier un type');
         return view('admin.institution-types.edit', compact('targetInstitutionType'));
     }
 
